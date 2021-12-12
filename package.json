@@ -1,5 +1,5 @@
 {
-  "name": "slicing-drone-shop",
+  "name": "drone-shop",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -8,7 +8,11 @@
     "@testing-library/user-event": "^12.8.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-google-login": "^5.2.2",
+    "react-hook-form": "^7.20.5",
+    "react-router-dom": "^6.0.2",
     "react-scripts": "4.0.3",
+    "vanilla-tilt": "^1.7.2",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
@@ -34,5 +38,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint-config-airbnb": "^19.0.1",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.27.1",
+    "eslint-plugin-react-hooks": "^4.3.0"
   }
 }
