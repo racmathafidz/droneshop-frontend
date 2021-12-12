@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 
-function App() {
+import LandingPage from './pages/LandingPage';
+import ProductsPage from './pages/ProductsPage';
+import GalleryPage from './pages/GalleryPage';
+import SignInPage from './pages/SignInPage';
+import SignUpPage from './pages/SignUpPage';
+import DetailProductPage from './pages/DetailProductPage';
+import CartPage from './pages/CartPage';
+import CheckoutPage from './pages/CheckoutPage';
+import SuccessCheckoutPage from './pages/SuccessCheckoutPage';
+import ProfilePage from './pages/ProfilePage';
+import AllTransactionPage from './pages/AllTransactionPage';
+import DetailTransactionPage from './pages/DetailTransactionPage';
+import NotFoundPage from './pages/NotFoundPage';
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<LandingPage />} />
+      <Route path="products" element={<ProductsPage />} />
+      <Route path="gallery" element={<GalleryPage />} />
+      <Route path="signin" element={<SignInPage />} />
+      <Route path="signup" element={<SignUpPage />} />
+      <Route path="product" element={<DetailProductPage />} />
+      <Route path="cart" element={<CartPage />} />
+      <Route path="checkout" element={<CheckoutPage />} />
+      <Route path="success" element={<SuccessCheckoutPage />} />
+      <Route path="profile" element={<ProfilePage />} />
+      <Route path="transaction" element={<AllTransactionPage />} />
+      <Route path="transaction/detail" element={<DetailTransactionPage />} />
+      <Route path="*" element={<NotFoundPage />} />
+    </Routes>
   );
 }
-
-export default App;
