@@ -1,0 +1,72 @@
+.hero {
+  display: flex;
+  background-color: #F3F5FC;
+  padding: 60px 100px 144px;  
+}
+
+.hero-description {
+  display: flex;
+  flex-direction: column;
+  width: 471px;
+  margin-right: 40px;
+}
+
+.discount-tag {
+  height: 36px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFEBEE;  
+  padding: 4px 16px;
+  border-radius: 50px; 
+  margin-bottom: 16px;
+}
+
+.discount-tag > p {
+  font-weight: 500;
+  font-size: 16px;
+  color: #FF645A; 
+  margin-left: 16px;
+}
+
+.hero-description-heading {
+  font-weight: 600;
+  font-size: 66px;
+  line-height: 86px;
+  color: #0A1329;
+  margin-bottom: 18px;
+}
+
+.hero-description-paragraph {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 33px;
+  color: #0A1329;
+  opacity: 55%;
+}
+
+.hero-description-button {
+  width: 170px;
+  justify-content: center;  
+  margin-top: 40px;
+}
+
+.hero-description-button > a {
+  display: flex;
+  padding: 16px 48px;
+  color: #fff;
+  background-color: #315BC7;  
+  border-radius: 50px;
+  font-weight: 500;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.hero-description-button > a:hover {
+  background-color: #0539bd;
+}
+
+.hero-image {
+  margin-top: 28px;
+}

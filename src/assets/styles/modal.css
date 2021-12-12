@@ -1,0 +1,26 @@
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.95);
+  z-index: 99;
+}
+
+.modal-content > iframe {
+  width: 880px;
+  height: 480px;
+}
+
+.modal-content-image > img {
+  max-width: 720px;  
+}
+
+.modal-content-image > p {
+  color: #fff;
+  margin-top: 2px;
+}
