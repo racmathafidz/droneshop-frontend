@@ -10,6 +10,7 @@ export default function NewProducts() {
         <h1>All Products</h1>
         <p>
           All innovation with best quality.
+          {' '}
           <br />
           Make every moment flying operation become unforgettable.
         </p>

@@ -39,3 +39,12 @@
 .go-back-button:hover {
   background-color: #0539BD;
 }
+
+/* Mobile */
+@media only screen and (max-width: 640px) {
+  .not-found > img {
+    width: 100%;
+    margin: auto;  
+    margin-bottom: 8px;
+  }
+}

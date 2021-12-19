@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import HeaderMobileModal from './HeaderMobileModal';
 import { cart } from '../json/cart.json';
 import UserImage from '../assets/images/User/user.svg';
 import BrandLogo from '../assets/images/Header/Logo.svg';
 
 export default function Navbar() {
   const [isLogin, setIsLogin] = useState(false);
+  const [mobileModalHeader, setMobileModalHeader] = useState(false);
+  console.log(mobileModalHeader);
 
   if (isLogin) {
     return (
@@ -55,6 +58,14 @@ export default function Navbar() {
             </div>
           </div>
         </div>
+        <div className="mobile-modal-header-toggle">
+          <button type="button" onClick={() => setMobileModalHeader(true)} className="mobile-modal-header-button">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+        <HeaderMobileModal isOpen={mobileModalHeader} closeModal={() => setMobileModalHeader(false)} isLogin={isLogin} />
       </section>
     );
   }
@@ -74,6 +85,14 @@ export default function Navbar() {
         <Link to="/signin" className="nav-button-signin">Sign In</Link>
         <Link to="/signup" className="nav-button-register">Register</Link>
       </div>
+      <div className="mobile-modal-header-toggle">
+        <button type="button" onClick={() => setMobileModalHeader(true)} className="mobile-modal-header-button">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+      <HeaderMobileModal isOpen={mobileModalHeader} closeModal={() => setMobileModalHeader(false)} isLogin={isLogin} />
     </section>
   );
 }

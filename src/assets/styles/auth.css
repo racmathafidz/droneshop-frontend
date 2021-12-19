@@ -24,6 +24,7 @@
 
 .signin-form {
   display: flex;
+  height: 100%;
   width: 340px;
   flex-direction: column;
   background-color: #fff;
@@ -44,6 +45,7 @@
 
 .signup-form {
   display: flex;
+  height: 100%;
   width: 340px;
   flex-direction: column;
   background-color: #fff;
@@ -182,4 +184,33 @@
 .auth-change > span {
   color: #2D7AF6;
   cursor: pointer;
+}
+
+/* Mobile */
+@media only screen and (max-width: 1024px) {
+  .auth {
+    display: flex;  
+    background-color: #FFF;    
+    height: 100vh;
+    justify-content: center;
+    /* align-items: center; */
+  }
+
+  .auth-image {
+    display: none;
+  }
+
+  .signin-form {     
+    border-radius: 0px;
+    margin: 0px;
+  }
+
+  .signup-form {
+    border-radius: 0px;
+    margin: 0px;    
+  }
+
+  .auth-change {    
+    padding-bottom: 24px;
+  }
 }

@@ -75,3 +75,40 @@
 .check-payment-status > a:hover {
   background-color: #0539bd;
 }
+
+@media only screen and (max-width: 1000px) {
+  .success-checkout {    
+    padding: 24px 24px 96px;
+  }
+
+  .success-checkout-container {    
+    padding: 20px 0px 24px;
+  }
+}
+
+/* Mobile */
+@media only screen and (max-width: 640px) {
+  .success-checkout {    
+    padding: 24px 24px 96px;
+  }
+
+  .success-checkout-container {    
+    padding: 20px 0px 24px;
+  }
+
+  .success-checkout-container-image > img {
+    width: 240px;    
+  }
+
+  .success-checkout-container > h1 {    
+    font-size: 28px;      
+  }
+
+  .payment-container {
+    width: 80%;    
+  }
+
+  .payment-method {
+    font-size: 16px;    
+  }
+}

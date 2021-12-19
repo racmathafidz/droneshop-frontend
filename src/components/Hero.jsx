@@ -13,17 +13,19 @@ export default function Hero() {
           <p>GET 25% DISCOUNT</p>
         </div>
         <h1 className="hero-description-heading">
-          Representing Drone Light
+          Representing
+          <br />
+          Drone Light
         </h1>
         <p className="hero-description-paragraph">
           Look up the sky and beautiful world with simple navigation. Just record and get a lot memories to share, lightly and fast like a lightning.
         </p>
         <div className="hero-description-button">
-          <Link to="/">Get Now</Link>
+          <Link to="/product">Get Now</Link>
         </div>
       </div>
       <div className="hero-image">
-        <img src={HeroImage} alt="Hero" width="760px" />
+        <img src={HeroImage} alt="Hero" />
       </div>
     </section>
   );

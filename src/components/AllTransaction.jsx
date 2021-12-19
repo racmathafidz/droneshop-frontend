@@ -24,7 +24,7 @@ export default function AllTransaction() {
               <p className="transaction-list-name">{items.name}</p>
               <p>{`${items.amount} ${items.amount <= 1 ? 'Item' : 'Items'}`}</p>
               <p>{priceFormat(items.amount * getPriceNumber(items.price))}</p>
-              <p>Waiting for payment</p>
+              <p className="transaction-status">Waiting for payment</p>
             </Link>
           ))
         }

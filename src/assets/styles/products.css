@@ -20,7 +20,7 @@
   color: #0A1329;
   opacity: 55%;
   font-weight: 400;
-  font-size: 22px;
+  font-size: 24px;
   line-height: 34px;
   text-align: center;  
 }
@@ -54,7 +54,7 @@
   color: #0A1329;
   opacity: 55%;
   font-weight: 400;
-  font-size: 22px;
+  font-size: 24px;
   line-height: 34px;
   text-align: center;  
 }
@@ -130,4 +130,51 @@
 
 .products-button > a:hover {
   background-color: #0539bd;
+}
+
+@media only screen and (max-width: 1000px) {
+  .products-price {
+    color: #0A1329;
+    font-weight: 600;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  .new-products {
+    padding: 60px 24px 112px;
+  }
+
+  .all-products {
+    padding: 60px 24px 112px;    
+  }
+}
+
+/* Mobile */
+@media only screen and (max-width: 640px) {
+  .new-products {
+    padding: 60px 24px 112px;
+  }
+
+  .new-products br {
+    display: none;
+  }
+
+  .new-products-list {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    row-gap: 32px; 
+  } 
+
+  .all-products {
+    padding: 60px 24px 112px;    
+  }
+
+  .all-products br {
+    display: none;
+  }
+
+  .all-products-list {    
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
 }

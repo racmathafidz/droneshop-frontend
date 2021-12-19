@@ -1,4 +1,5 @@
 .content {
+  width: full;
   height: 700px;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));  
@@ -21,6 +22,7 @@
 .content-child-2 {
   height: 700px;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4)),url('../images/Content/best_resolution.png');
+  background-position: center;
   background-size: cover;
   transition: all 0.4s ease-in-out;
 }
@@ -54,4 +56,28 @@
   color: #fff; 
   font-weight: 500;
   font-size: 28px;
+}
+
+/* Mobile */
+@media only screen and (max-width: 640px) {
+  .content {    
+    height: 700px;    
+    grid-template-columns: repeat(1, minmax(0, 1fr));  
+    margin-bottom: 700px;
+  }
+  
+  .content-paragraph {
+    padding: 0px 72px; 
+    text-align: center;
+    color: #fff; 
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 50px;
+  }
+
+  .content-paragraph-span {
+    color: #fff; 
+    font-weight: 500;
+    font-size: 24px;
+  }
 }

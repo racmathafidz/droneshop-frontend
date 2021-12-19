@@ -49,3 +49,21 @@
   font-size: 18px;
   margin-bottom: 12px;
 }
+
+@media only screen and (max-width: 1000px) {
+  .footer {        
+    padding: 100px 24px;
+  }
+}
+
+/* Mobile */
+@media only screen and (max-width: 640px) {
+  .footer {    
+    flex-direction: column;
+    padding: 100px 24px;
+  }
+
+  .company-office {
+    margin-top: 60px;
+  }
+}

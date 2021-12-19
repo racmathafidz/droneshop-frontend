@@ -42,7 +42,7 @@ export default function Cart() {
         <div className="cart-subtotal">
           <h1 className="cart-subtotal-title">Subtotal</h1>
           <div className="cart-subtotal-items">
-            <p>{`Subtotal (${totalItems} Items)`}</p>
+            <p id="items">{`Subtotal (${totalItems} Items)`}</p>
             <p id="subtotal">{priceFormat(subtotal)}</p>
           </div>
           <button type="button" className="cart-checkout" onClick={checkoutHandler}>Checkout</button>

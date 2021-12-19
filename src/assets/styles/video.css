@@ -1,5 +1,4 @@
-.video {
-  display: relative;
+.video {  
   flex-direction: column;
   position: relative;
   padding-top: 152px;  
@@ -51,4 +50,33 @@
 
 .video-play:hover {
   transform: scale(1.1);
+}
+
+@media only screen and (max-width: 1024px) {
+  .video-shot {
+    position: relative;
+    width: 100%;
+    z-index: -99;
+    margin: auto;
+    text-align: center;
+    border-radius: 20px;  
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .video {    
+    padding: 152px 24px 60px;      
+  }
+}
+
+/* Mobile */
+@media only screen and (max-width: 640px) {
+  .video {    
+    padding: 152px 24px 60px;      
+  }
+
+  .video-play {    
+    bottom: 40%;
+    width: 15%;
+  }
 }

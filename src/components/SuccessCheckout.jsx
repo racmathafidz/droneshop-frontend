@@ -26,7 +26,7 @@ export default function SuccessCheckout() {
           </div>
         </div>
         <div className="check-payment-status">
-          <Link to="/payment">Payment status</Link>
+          <Link to="/transaction/detail">Payment status</Link>
         </div>
       </div>
     </section>
