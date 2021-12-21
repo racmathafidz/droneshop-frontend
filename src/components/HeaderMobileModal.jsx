@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
 export default function HeaderMobileModal(props) {
   const { isOpen, closeModal, isLogin } = props;
-  console.log(isOpen);
 
   if (isOpen && !isLogin) {
     return (

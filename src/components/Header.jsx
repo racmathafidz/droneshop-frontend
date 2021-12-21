@@ -9,7 +9,6 @@ import BrandLogo from '../assets/images/Header/Logo.svg';
 export default function Navbar() {
   const [isLogin, setIsLogin] = useState(false);
   const [mobileModalHeader, setMobileModalHeader] = useState(false);
-  console.log(mobileModalHeader);
 
   if (isLogin) {
     return (

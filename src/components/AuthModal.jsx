@@ -5,7 +5,6 @@ import GoogleButton from './GoogleButton';
 
 export default function AuthModal(props) {
   const { isOpen, setIsModalOpen, modalType, setModalType } = props;
-  console.log(isOpen, modalType);
 
   const googleSignInHandler = (response) => {
     console.log(response);
