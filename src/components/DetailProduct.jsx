@@ -5,12 +5,12 @@ import getPriceNumber from '../utils/getPriceNumber';
 import priceFormat from '../utils/priceFormat';
 import { products } from '../json/products.json';
 
-export default function DetailProduct() {
-  const data = products[0];
+export default function DetailProduct(props) {
+  const { ProductData } = props;
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalType, setModalType] = useState('SignIn');
   const [purchaseAmount, setPurchaseAmount] = useState(1);
-  const subTotal = priceFormat(purchaseAmount * getPriceNumber(data.price));
+  const subTotal = priceFormat(purchaseAmount * getPriceNumber(ProductData.price));
 
   const incrementPurchaseAmount = () => {
     if (purchaseAmount >= 100) {
@@ -42,12 +42,12 @@ export default function DetailProduct() {
     <section className="product">
       <div className="product-info">
         <div className="product-image">
-          <img src={data.images} alt="Product" />
+          <img src={ProductData.images} alt="Product" />
         </div>
         <div className="product-detail">
-          <h1 className="product-detail-name">{data.name}</h1>
-          <h1 className="product-detail-price">{data.price}</h1>
-          <p className="product-detail-description">{data.description}</p>
+          <h1 className="product-detail-name">{ProductData.name}</h1>
+          <h1 className="product-detail-price">{ProductData.price}</h1>
+          <p className="product-detail-description">{ProductData.description}</p>
           <div className="product-amount">
             <div className="product-amount-count">
               <button type="button" className="purchase-count-button decrement-button" onClick={decrementPurchaseAmount}>-</button>

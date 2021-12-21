@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { products } from '../json/products.json';
+export default function NewProducts(props) {
+  const { ProductsData } = props;
 
-export default function NewProducts() {
   return (
     <section className="all-products">
       <div className="all-products-title">
@@ -17,7 +17,7 @@ export default function NewProducts() {
       </div>
       <div className="all-products-list">
         {
-          products
+          ProductsData
             .map((items) => (
               <div className="products-list" key={items.name}>
                 <img src={items.images} alt={items.name} />
@@ -25,7 +25,7 @@ export default function NewProducts() {
                 <h1 className="products-price">{items.price}</h1>
                 <p className="products-description">{items.description}</p>
                 <div className="products-button">
-                  <Link to="/product">Go Now</Link>
+                  <Link to={`/products/${items._id}`}>Go Now</Link>
                 </div>
               </div>
             ))
