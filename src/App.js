@@ -23,13 +23,13 @@ export default function App() {
       <Route path="gallery" element={<GalleryPage />} />
       <Route path="signin" element={<SignInPage />} />
       <Route path="signup" element={<SignUpPage />} />
-      <Route path="product" element={<DetailProductPage />} />
       <Route path="cart" element={<CartPage />} />
       <Route path="checkout" element={<CheckoutPage />} />
       <Route path="success" element={<SuccessCheckoutPage />} />
       <Route path="profile" element={<ProfilePage />} />
       <Route path="transaction" element={<AllTransactionPage />} />
       <Route path="transaction/detail" element={<DetailTransactionPage />} />
+      <Route path="products/:id" element={<DetailProductPage />} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );
