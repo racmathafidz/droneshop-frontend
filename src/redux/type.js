@@ -1,0 +1,1 @@
+export const ADD_PRODUCTS_DATA = 'ADD_PRODUCTS_DATA';
