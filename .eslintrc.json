@@ -31,6 +31,12 @@
         "jsx-a11y/click-events-have-key-events": "off",
         "jsx-a11y/no-noninteractive-element-interactions": "off",
         "jsx-a11y/no-static-element-interactions": "off",
-        "react/no-unescaped-entities": "off"
+        "react/no-unescaped-entities": "off",
+        "eol-last": "off",
+        "import/prefer-default-export": "off",
+        "no-undef": "off",
+        "no-multi-assign": "off",
+        "default-param-last": "off",
+        "no-underscore-dangle": "off"
     }
 }
