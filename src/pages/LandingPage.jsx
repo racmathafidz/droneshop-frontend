@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import axios from 'axios';
@@ -27,6 +27,10 @@ export default function LandingPage() {
         });
       });
   }, []);
+
+  useEffect(() => {
+    document.title = 'DroneShopID';
+  });
 
   if (State.ProductsData.ProductsData) {
     return (
