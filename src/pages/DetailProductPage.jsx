@@ -10,19 +10,25 @@ import Footer from '../components/Footer';
 export default function DetailProductPage() {
   const { id } = useParams();
   const [productData, setProductData] = useState();
+  const [reRender, setReRender] = useState(false);
+
+  const reRenderPage = () => {
+    setReRender(!reRender);
+  };
 
   useEffect(() => {
     axios.get(`${process.env.REACT_APP_BASE_URL}/product/${id}`)
       .then((response) => {
         setProductData(response.data);
+        document.title = `${response.data.name} | DroneShopID`;
       });
   }, []);
 
   if (productData) {
     return (
       <>
-        <Header />
-        <DetailProduct ProductData={productData} />
+        <Header reRender={reRender} />
+        <DetailProduct ProductData={productData} reRenderPage={reRenderPage} />
         <Footer />
       </>
     );
