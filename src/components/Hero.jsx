@@ -21,7 +21,7 @@ export default function Hero() {
           Look up the sky and beautiful world with simple navigation. Just record and get a lot memories to share, lightly and fast like a lightning.
         </p>
         <div className="hero-description-button">
-          <Link to="/product">Get Now</Link>
+          <Link to="/products/61c04a646b1adb1e0bd67a7d">Get Now</Link>
         </div>
       </div>
       <div className="hero-image">
