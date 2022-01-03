@@ -7,12 +7,12 @@ export default function NotFound() {
   const navigate = useNavigate();
 
   return (
-    <div className="not-found">
+    <section className="not-found">
       <img src={NotFoundImage} alt="Page Not Found" />
       <h1>Ooppss, Page not found.</h1>
       <div className="go-back-button-container">
         <button type="button" className="go-back-button" onClick={() => navigate(-1)}>Go Back</button>
       </div>
-    </div>
+    </section>
   );
 }
