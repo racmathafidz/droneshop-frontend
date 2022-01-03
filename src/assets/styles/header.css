@@ -111,7 +111,8 @@
 }
 
 .cart-link {
-  display: flex;    
+  display: flex; 
+  position: relative;   
   height: 100%;
 }
 
@@ -123,6 +124,20 @@
   margin: auto;
 }
 
+.cart-amount-container {
+  position: absolute;
+  padding: 3px 7px;
+  margin-left: 24px;
+  top: -2px;
+  background-color: rgb(239 68 68);
+  border-radius: 50%;
+}
+
+.cart-amount-number {
+  font-size: 14px;
+  color: #fff;
+}
+
 .cart-popover {   
   opacity: 0;
   visibility: hidden;  
@@ -132,6 +147,7 @@
   padding: 12px;  
   width: auto;
   border-radius: 10px;
+  border: 1px solid #E4E6EB;
 }
 
 /* Popover triangle arrow */
@@ -139,7 +155,7 @@
   position: absolute;
   z-index: -1;
   content: "";
-  right: calc(36% - 10px);
+  right: calc(36%);
   top: -8px;
   border-style: solid;
   border-width: 0 10px 10px 10px;
@@ -160,7 +176,7 @@
 
 .cart-popover-items {
   display: flex;
-  width: 380px;
+  width: 400px;
   align-items: center;
   justify-content: center;
   color: #0A1329;
@@ -181,12 +197,18 @@
 }
 
 .cart-popover-items-name {
-  padding: 0px 8px;
+  padding: 0px 8px;  
 }
 
 .cart-popover-items-price {
   display: flex;
   width: 30%;
+  padding: 0px 8px;
+}
+
+.cart-popover-items-qty {
+  display: flex;
+  width: 5%;
   padding: 0px 8px;
 }
 
@@ -203,6 +225,7 @@
 .profile-link > img {
   height: 40px;
   width: 40px;
+  border-radius: 50%;
 }
 
 .profile-popover {
@@ -257,19 +280,14 @@
   display: none;
 }
 
-/* Mobile */
-@media only screen and (max-width: 640px) {
+/* Tablet */
+@media only screen and (max-width: 1024px) {
   .navigation {    
     padding: 24px;
   }
 
-  .nav-logo > img {
-    width: 52px;
-    margin-right: 12px;
-  }
-
   .nav-logo > p {
-    display: none;
+    display: block;
   }
 
   .nav-link {
@@ -278,6 +296,14 @@
 
   .nav-button {
     display: none;
+  }
+
+  .nav-button-signin:hover::after {
+    width: 0;
+  }
+
+  .nav-button-register:hover {
+    background-color: transparent;
   }
 
   .mobile-modal-header-toggle {
@@ -294,14 +320,19 @@
   }  
 }
 
-/* Tablet */
-@media only screen and (max-width: 1024px) {
+/* Mobile */
+@media only screen and (max-width: 640px) {
   .navigation {    
     padding: 24px;
   }
 
+  .nav-logo > img {
+    width: 52px;
+    margin-right: 12px;
+  }
+
   .nav-logo > p {
-    display: block;
+    display: none;
   }
 
   .nav-link {

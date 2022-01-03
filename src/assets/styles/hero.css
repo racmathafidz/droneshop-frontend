@@ -72,10 +72,10 @@
 }
 
 .hero-image > img {
-  width: 105%;
+  width: 748px;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1024px) {
   .hero {
     padding: 24px 24px 96px;
     /* flex-direction: column-reverse; */
@@ -83,6 +83,7 @@
 
   .hero-image > img {
     margin-top: 32px;
+    width: 100%;
   }
 
   .discount-tag {

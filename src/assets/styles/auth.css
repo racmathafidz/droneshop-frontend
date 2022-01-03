@@ -24,7 +24,7 @@
 
 .signin-form {
   display: flex;
-  height: 100%;
+  height: auto;
   width: 340px;
   flex-direction: column;
   background-color: #fff;
@@ -43,9 +43,25 @@
   padding: 42px;
 }
 
+.loading-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  width: 340px;
+  background-color: #fff;
+  border-radius: 30px;
+  margin: 44px 0px;
+  padding: 42px;
+}
+
+.loading-modal img {
+  width: 76px;
+}
+
 .signup-form {
   display: flex;
-  height: 100%;
+  height: auto;
   width: 340px;
   flex-direction: column;
   background-color: #fff;
@@ -152,6 +168,25 @@
   outline-width: 0;
 }
 
+.auth-error {
+  display: flex;
+  font-size: 16px;
+  color: #fff;
+  background-color: rgb(239 68 68);
+  padding: 4px 12px;
+  border-radius: 8px;
+}
+
+.auth-failed {
+  display: flex;
+  font-size: 16px;
+  color: #fff;
+  background-color: rgb(239 68 68);
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-top: 8px;
+}
+
 .auth-button {
   background-color: #0A1329;
   color: #fff;
@@ -167,7 +202,7 @@
 
 .auth-button:hover {
   cursor: pointer;
-  background-color: #081022;
+  background-color: #050c1d;
 }
 
 .auth-change {

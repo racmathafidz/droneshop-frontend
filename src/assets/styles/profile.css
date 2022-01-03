@@ -47,6 +47,7 @@
   height: 144px;
   width: 144px;
   margin-right: 32px;
+  border-radius: 50%;
 }
 
 .user-detail {
