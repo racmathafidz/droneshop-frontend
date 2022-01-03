@@ -9,7 +9,7 @@ import SocialFacebook from '../assets/images/Footer/social-facebook.svg';
 
 export default function Footer() {
   return (
-    <section className="footer">
+    <footer className="footer">
       <div className="company-profile">
         <Link to="/">
           <img src={BrandLogo} alt="Drone Shop ID" />
@@ -43,6 +43,6 @@ export default function Footer() {
         <p>Indonesia</p>
         <p>rac.hafidz@gmail.com</p>
       </div>
-    </section>
+    </footer>
   );
 }
