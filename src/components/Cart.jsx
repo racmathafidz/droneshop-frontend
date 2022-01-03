@@ -1,49 +1,77 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 import CartProductList from './CartProductList';
-import { cart } from '../json/cart.json';
+import { ActionCreators } from '../redux/actions';
 import getPriceNumber from '../utils/getPriceNumber';
 import priceFormat from '../utils/priceFormat';
+import decrypt from '../utils/decrypt';
 
-export default function Cart() {
+export default function Cart(props) {
+  const { reRenderPage } = props;
+
   const navigate = useNavigate();
+  const State = useSelector((state) => state);
+  const cartState = State.Cart.Cart ? State.Cart.Cart : [];
+  const userDataState = State.DroneShop.DroneShop ? decrypt(State.DroneShop.DroneShop) : State.DroneShop;
+  const dispatch = useDispatch();
+  const { AddCheckoutAction } = bindActionCreators(ActionCreators, dispatch);
+
   const [subtotal, setSubtotal] = useState();
   const [totalItems, setTotalItems] = useState();
   const itemsPriceArray = [];
   const totalItemsArray = [];
 
   const getSubtotal = () => {
-    cart.map((items) => totalItemsArray.push(items.amount));
-    setTotalItems(totalItemsArray.reduce((total, num) => total + num));
-    cart.map((items) => itemsPriceArray.push(items.amount * getPriceNumber(items.price)));
-    setSubtotal(itemsPriceArray.reduce((total, num) => total + num));
+    if (cartState.length > 0) {
+      cartState.map((items) => totalItemsArray.push(items.quantity));
+      setTotalItems(totalItemsArray.reduce((total, num) => total + num));
+      cartState.map((items) => itemsPriceArray.push(items.quantity * getPriceNumber(items.price)));
+      setSubtotal(itemsPriceArray.reduce((total, num) => total + num));
+    } else {
+      setTotalItems(0);
+      setSubtotal(0);
+    }
   };
 
   const checkoutHandler = () => {
-    navigate('/checkout');
+    if (userDataState.token && cartState.length > 0) {
+      AddCheckoutAction({
+        Checkout: cartState,
+      });
+
+      navigate('/checkout');
+    }
+    return null;
   };
 
   useEffect(() => {
-    getSubtotal();
-  }, []);
+    if (cartState !== undefined) {
+      getSubtotal();
+    }
+  }, [cartState]);
 
-  if (subtotal) {
+  if (cartState && subtotal !== undefined) {
     return (
       <section className="cart">
         <div className="cart-list">
           <h1 className="cart-list-title">Shopping Cart</h1>
           {
-            cart.map((items) => (
-              <CartProductList data={items} key={items.name} />
-            ))
+            cartState.length === 0 ? (
+              <p className="cart-empty">Your cart is empty</p>
+            )
+              : (cartState.map((items) => (
+                <CartProductList data={items} reRenderPage={reRenderPage} userDataState={userDataState} />
+              )))
           }
         </div>
         <div className="cart-subtotal">
           <h1 className="cart-subtotal-title">Subtotal</h1>
           <div className="cart-subtotal-items">
-            <p id="items">{`Subtotal (${totalItems} Items)`}</p>
-            <p id="subtotal">{priceFormat(subtotal)}</p>
+            <p id="items">{`Subtotal (${cartState.length > 0 ? totalItems : 0} Items)`}</p>
+            <p id="subtotal">{cartState.length > 0 ? priceFormat(subtotal) : 0}</p>
           </div>
           <button type="button" className="cart-checkout" onClick={checkoutHandler}>Checkout</button>
         </div>

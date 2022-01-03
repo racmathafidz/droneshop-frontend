@@ -1,49 +1,76 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
-import { cart } from '../json/cart.json';
+import EmptyCheckout from '../assets/images/Cart/empty.png';
+import postTransaction from '../services/postTransaction';
 import getPriceNumber from '../utils/getPriceNumber';
 import priceFormat from '../utils/priceFormat';
+import decrypt from '../utils/decrypt';
 
 export default function Checkout() {
   const navigate = useNavigate();
+  const State = useSelector((state) => state);
+  const checkoutState = State.Checkout.Checkout;
+  const userDataState = State.DroneShop.DroneShop ? decrypt(State.DroneShop.DroneShop) : State.DroneShop;
+
+  const [fullName, setFullName] = useState();
+  const [phoneNumberState, setPhoneNumberState] = useState();
+  const [fullAddress, setFullAddress] = useState();
   const [totalItems, setTotalItems] = useState();
   const [subtotal, setSubtotal] = useState();
-  // const [shippingCosts, setShippingCosts] = useState();
-  // const [shippingInsurance, setShippingInsurance] = useState();
-  // const [totalPrice, setTotalPrice] = useState();
   const itemsPriceArray = [];
   const totalItemsArray = [];
+  const pattern = '[0-9]*';
 
   const getTotal = () => {
-    cart.filter((items, index) => index <= 2).map((items) => totalItemsArray.push(items.amount));
+    checkoutState.map((items) => totalItemsArray.push(items.quantity));
     setTotalItems(totalItemsArray.reduce((total, num) => total + num));
-    cart.filter((items, index) => index <= 2).map((items) => itemsPriceArray.push(items.amount * getPriceNumber(items.price)));
+    checkoutState.map((items) => itemsPriceArray.push(items.quantity * getPriceNumber(items.price)));
     setSubtotal(itemsPriceArray.reduce((total, num) => total + num));
   };
 
+  const phoneNumberChange = (event) => {
+    if (event.target.validity.valid) {
+      setPhoneNumberState(event.target.value);
+    } else {
+      setPhoneNumberState(phoneNumberState);
+    }
+  };
+
   const checkoutHandler = () => {
-    navigate('/success');
+    const payload = {
+      fullName,
+      phoneNumber: phoneNumberState,
+      address: fullAddress,
+      transactionItem: checkoutState,
+      userId: userDataState.id,
+      total: priceFormat(subtotal + (totalItems * 31000) + (totalItems * 10000)),
+    };
+
+    postTransaction(payload, userDataState, navigate);
   };
 
   useEffect(() => {
-    getTotal();
+    if (checkoutState) {
+      getTotal();
+    }
   }, []);
 
-  if (subtotal) {
+  if (subtotal && checkoutState !== undefined) {
     return (
       <section className="checkout">
         <div className="checkout-detail">
           <div className="checkout-items">
             <h1 className="checkout-title">Items</h1>
             {
-              cart.filter((items, index) => index <= 2).map((items) => (
+              checkoutState.map((items) => (
                 <div className="checkout-product-list">
                   <div className="checkout-product-list-images-name">
                     <img src={items.images} alt={items.name} className="checkout-product-list-image" />
                     <div className="checkout-product-list-name">
                       <h1>{items.name}</h1>
-                      <p>{`${items.amount} Items`}</p>
+                      <p>{`${items.quantity} Items`}</p>
                     </div>
                   </div>
                   <div className="checkout-product-list-price">
@@ -55,7 +82,7 @@ export default function Checkout() {
           </div>
           <div className="checkout-address">
             <h1 className="checkout-title">Address</h1>
-            <form action="" className="checkout-input-form">
+            <div className="checkout-input-form">
               <label htmlFor="fullName" className="checkout-label">
                 Full Name
                 <input
@@ -63,15 +90,22 @@ export default function Checkout() {
                   name="fullName"
                   id="fullName"
                   className="checkout-input"
+                  value={fullName}
+                  onChange={(event) => setFullName(event.target.value)}
+                  required
                 />
               </label>
               <label htmlFor="password" className="checkout-label">
                 Phone Number
                 <input
-                  type="text"
+                  type="number"
                   name="phoneNumber"
                   id="phoneNumber"
                   className="checkout-input"
+                  pattern={pattern}
+                  value={phoneNumberState}
+                  onChange={phoneNumberChange}
+                  required
                 />
               </label>
               <label htmlFor="fullAddress" className="checkout-label">
@@ -82,12 +116,12 @@ export default function Checkout() {
                   name="fullAddress"
                   id="fullAddress"
                   className="checkout-input"
+                  value={fullAddress}
+                  onChange={(event) => setFullAddress(event.target.value)}
+                  required
                 />
               </label>
-              <div className="save-address-button">
-                <input type="submit" value="Save" />
-              </div>
-            </form>
+            </div>
           </div>
         </div>
         <div className="checkout-total">
@@ -109,6 +143,18 @@ export default function Checkout() {
             <p className="checkout-total-pay-costs">{priceFormat(subtotal + (totalItems * 31000) + (totalItems * 10000))}</p>
           </div>
           <button type="button" className="cart-checkout" onClick={checkoutHandler}>Pay</button>
+        </div>
+      </section>
+    );
+  }
+
+  if (!checkoutState) {
+    return (
+      <section className="empty-checkout">
+        <img src={EmptyCheckout} alt="You haven't shopped" />
+        <h1>Ooppss, You haven't shopped.</h1>
+        <div className="go-back-button-container">
+          <button type="button" className="go-back-button" onClick={() => navigate('/products')}>Go Shop</button>
         </div>
       </section>
     );

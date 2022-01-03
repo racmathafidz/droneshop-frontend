@@ -1,9 +1,20 @@
 import React from 'react';
-
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+import { ActionCreators } from '../redux/actions';
+import useSignOut from '../services/signOut';
 
 export default function HeaderMobileModal(props) {
   const { isOpen, closeModal, isLogin } = props;
+
+  const dispatch = useDispatch();
+  const { SignOutAction, AddCartAction, DeleteCheckoutAction } = bindActionCreators(ActionCreators, dispatch);
+
+  const SignOut = () => {
+    useSignOut(SignOutAction, AddCartAction, DeleteCheckoutAction);
+  };
 
   if (isOpen && !isLogin) {
     return (
@@ -50,7 +61,7 @@ export default function HeaderMobileModal(props) {
             <Link to="/cart">Cart</Link>
             <Link to="/profile">Profile</Link>
             <Link to="/transaction">Transaction</Link>
-            <button type="button" onClick={() => { console.log('Log Out'); }}>Log Out</button>
+            <button type="button" onClick={SignOut}>Log Out</button>
           </div>
         </div>
       </section>
