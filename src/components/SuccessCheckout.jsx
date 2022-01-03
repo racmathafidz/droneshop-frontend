@@ -2,8 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import PaymentImage from '../assets/images/Payment/payment.png';
+import splitString from '../utils/splitString';
 
-export default function SuccessCheckout() {
+export default function SuccessCheckout(props) {
+  const { TransactionData } = props;
+
   return (
     <section className="success-checkout">
       <div className="success-checkout-container">
@@ -18,15 +21,15 @@ export default function SuccessCheckout() {
           </div>
           <div className="payment-method">
             <p>Payment code</p>
-            <p className="payment-method-info">121231234</p>
+            <p className="payment-method-info">{splitString(TransactionData._id)}</p>
           </div>
           <div className="payment-method">
             <p>Total payment</p>
-            <p className="payment-method-info">Rp190.000.000</p>
+            <p className="payment-method-info">{TransactionData.total}</p>
           </div>
         </div>
         <div className="check-payment-status">
-          <Link to="/transaction/detail">Payment status</Link>
+          <Link to={`/transaction/${TransactionData._id}`}>Payment status</Link>
         </div>
       </div>
     </section>
