@@ -20,7 +20,7 @@ export default function LandingPage() {
   const State = useSelector((state) => state);
 
   useEffect(() => {
-    axios.get(`${process.env.REACT_APP_BASE_URL}/product`)
+    axios.get(`${process.env.REACT_APP_BASE_URL}/api/product`)
       .then((response) => {
         AddProductsDataAction({
           ProductsData: response.data,
