@@ -21,7 +21,7 @@ export default function SuccessCheckoutPage() {
   const [transactionData, setTransactionData] = useState();
 
   useEffect(() => {
-    const url = `${process.env.REACT_APP_BASE_URL}/transaction/detail/${id}`;
+    const url = `${process.env.REACT_APP_BASE_URL}/api/transaction/detail/${id}`;
     const config = {
       headers: {
         'x-access-token': userDataState.token,

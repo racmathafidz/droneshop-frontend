@@ -27,7 +27,7 @@ export default function Navbar(props) {
 
   useEffect(() => {
     if (userDataState.token) {
-      const url = `${process.env.REACT_APP_BASE_URL}/cart/${userDataState.id}`;
+      const url = `${process.env.REACT_APP_BASE_URL}/api/cart/${userDataState.id}`;
       const config = {
         headers: {
           'x-access-token': userDataState.token,

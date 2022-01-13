@@ -17,7 +17,7 @@ export default function DetailProductPage() {
   };
 
   useEffect(() => {
-    axios.get(`${process.env.REACT_APP_BASE_URL}/product/${id}`)
+    axios.get(`${process.env.REACT_APP_BASE_URL}/api/product/${id}`)
       .then((response) => {
         setProductData(response.data);
         document.title = `${response.data.name} | DroneShopID`;

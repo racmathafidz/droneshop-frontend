@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export default function deleteCart(id, reRenderPage, userDataState) {
-  const url = `${process.env.REACT_APP_BASE_URL}/cart/delete/${id}`;
+  const url = `${process.env.REACT_APP_BASE_URL}/api/cart/delete/${id}`;
   const config = {
     headers: {
       'x-access-token': userDataState.token,

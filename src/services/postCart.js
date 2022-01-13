@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export default function postCart(cartData, setIsModalOpen, userDataState, reRenderPage, setSuccessAddToCart) {
-  const url = `${process.env.REACT_APP_BASE_URL}/cart/post`;
+  const url = `${process.env.REACT_APP_BASE_URL}/api/cart/post`;
   const data = cartData;
   const config = {
     headers: {

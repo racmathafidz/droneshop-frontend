@@ -19,7 +19,7 @@ export default function AllTransactionPage() {
   const [transactionData, setTransactionData] = useState();
 
   useEffect(() => {
-    const url = `${process.env.REACT_APP_BASE_URL}/transaction/${userDataState.id}`;
+    const url = `${process.env.REACT_APP_BASE_URL}/api/transaction/${userDataState.id}`;
     const config = {
       headers: {
         'x-access-token': userDataState.token,

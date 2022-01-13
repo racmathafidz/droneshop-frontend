@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 async function deleteCart(id, userDataState) {
-  const url = `${process.env.REACT_APP_BASE_URL}/cart/delete/${id}`;
+  const url = `${process.env.REACT_APP_BASE_URL}/api/cart/delete/${id}`;
   const config = {
     headers: {
       'x-access-token': userDataState.token,
@@ -15,7 +15,7 @@ async function deleteCart(id, userDataState) {
 }
 
 export default function postTransaction(data, userDataState, navigate) {
-  const url = `${process.env.REACT_APP_BASE_URL}/transaction/post`;
+  const url = `${process.env.REACT_APP_BASE_URL}/api/transaction/post`;
   const config = {
     headers: {
       'x-access-token': userDataState.token,
