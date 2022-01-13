@@ -119,7 +119,7 @@
 .auth-title-modal > button > svg {
   height: 24px;
   color: #0A1329;
-  opacity: 55%;
+  opacity: 0.55;
 }
 
 .auth-or-text {

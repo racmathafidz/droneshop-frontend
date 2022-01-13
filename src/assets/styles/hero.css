@@ -43,7 +43,7 @@
   font-size: 20px;
   line-height: 33px;
   color: #0A1329;
-  opacity: 55%;
+  opacity: 0.55;
 }
 
 .hero-description-button {
@@ -116,7 +116,7 @@
     font-size: 20px;
     line-height: 32px;
     color: #0A1329;
-    opacity: 55%;
+    opacity: 0.55;
   }
 }
 
@@ -170,7 +170,7 @@
     font-size: 20px;
     line-height: 32px;
     color: #0A1329;
-    opacity: 55%;
+    opacity: 0.55;
   }
 }
 
