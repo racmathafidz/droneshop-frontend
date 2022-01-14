@@ -1,8 +1,31 @@
-# Getting Started with Create React App
+# DroneShop
+![alt text](https://github.com/racmathafidz/droneshop-frontend/blob/main/public/assets/images/screenshot/screely.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### About
+E-commerce website that sells best quality drones:helicopter:.\
+Built with ReactJS, CSS, and Redux.\
+Frontend/client side of [**DroneShop Backend**](https://github.com/racmathafidz/droneshop-backend).
 
-## Available Scripts
+### Tech Stack
+- [**ReactJS**](https://github.com/facebook/create-react-app)
+- **CSS**
+- [**Netlify**](https://netlify.com/)
+
+### Library
+- [**axios**](https://github.com/axios/axios) : HTTP requests
+- [**redux**](https://redux.js.org/) : Managing and centralizing application's state
+- [**react-redux**](https://www.npmjs.com/package/react-redux) : React redux bindings
+- [**redux-thunk**](https://www.npmjs.com/package/redux-thunk) : Call redux's action creators
+- [**redux-persist**](https://www.npmjs.com/package/redux-persist) : Persist and rehydrate a redux store
+- [**crypto-js**](https://www.npmjs.com/package/crypto-js) : Encrypt and decrypt data
+- [**react-hook-form**](https://www.npmjs.com/package/react-hook-form) : Forms
+- [**react-google-login**](https://www.npmjs.com/package/react-google-login) : Google OAuth
+- [**vanilla-tilt**](https://www.npmjs.com/package/vanilla-tilt) : Smooth 3D tilt
+
+### Demo
+**Demo :** https://racx-droneshop.netlify.app/
+
+### Available Scripts
 
 In the project directory, you can run:
 
