@@ -2,7 +2,7 @@
 ![alt text](https://github.com/racmathafidz/droneshop-frontend/blob/main/public/assets/images/screenshot/screely.png)
 
 ### About
-E-commerce website that sells best quality drones:helicopter:.\
+E-commerce website that sells best quality drones :helicopter:.\
 Built with ReactJS, CSS, and Redux.\
 Frontend/client side of [**DroneShop Backend**](https://github.com/racmathafidz/droneshop-backend).
 
