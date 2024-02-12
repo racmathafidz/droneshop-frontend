@@ -9,7 +9,7 @@ Frontend/client side of [**DroneShop Backend**](https://github.com/racmathafidz/
 ### Tech Stack
 - [**ReactJS**](https://github.com/facebook/create-react-app)
 - **CSS**
-- [**Netlify**](https://netlify.com/)
+- [**Vercel**](https://vercel.com/)
 
 ### Library
 - [**axios**](https://github.com/axios/axios) : HTTP requests
@@ -23,7 +23,7 @@ Frontend/client side of [**DroneShop Backend**](https://github.com/racmathafidz/
 - [**vanilla-tilt**](https://www.npmjs.com/package/vanilla-tilt) : Smooth 3D tilt
 
 ### Demo
-**Demo :** https://racx-droneshop.netlify.app/
+**Demo :** https://racx-droneshop.vercel.app/
 
 ### Available Scripts
 
